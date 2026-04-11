@@ -8,7 +8,7 @@ const About = () => {
     const skillSection = [
         {
             title: "Frontend",
-            skills: ["HTML", "CSS", "JS", "React", "Redux", "Tailwind", "Bootstrap", "shad cn Ui"]
+            skills: ["HTML", "CSS", "JS", "React", "Redux", "Tailwind", "Bootstrap", "shad cn Ui", "zoostand"]
         },
         {
             title: "backend",
@@ -37,7 +37,7 @@ const About = () => {
             <div className="min-h-screen bg-background py-12">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* the header section */}
-                    <div  className="text-center mb-16">
+                    <div className="text-center mb-16">
                         <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
                             About me
                         </h1>
@@ -55,11 +55,11 @@ const About = () => {
                                     <span>Based in Hooghly, West Bengal</span>
                                 </div>
                                 <div className="flex items-center gap-3 text-muted-foreground">
-                                    <GraduationCap className="h-5 w-5 text-primary"/>
+                                    <GraduationCap className="h-5 w-5 text-primary" />
                                     <span>Btech computer Science enginner </span>
                                 </div>
-                                <div  className="flex items-center gap-3 text-muted-foreground">
-                                    <Calendar className="h-5 w-5 text-primary"/>
+                                <div className="flex items-center gap-3 text-muted-foreground">
+                                    <Calendar className="h-5 w-5 text-primary" />
                                     <span>2 years of professional experience</span>
                                 </div>
                                 <p className="text-foreground mt-6 leading-relaxed">
@@ -68,6 +68,62 @@ const About = () => {
                             </CardContent>
                         </CardHeader>
                     </Card>
+                    {/* skill section */}
+                    <div className="mb-12">
+                        <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
+                            Technical skills
+                        </h2>
+                        <div className="grid md:grid-cols-3 gap-6">
+                            {skillSection.map((catagoty, index) => (
+                                <Card key={index} className="bg-background border-border">
+                                    <CardHeader className="text-xl text-foreground">
+                                        <CardTitle className="text-xl text-foreground">{catagoty.title}</CardTitle>
+                                    </CardHeader>
+                                    <CardContent>
+                                        <div className="flex flex-wrap gap-2">
+                                            {catagoty.skills.map((skill, skillIndex) => (
+
+                                                <Badge key={skillIndex}
+                                                    variant="secondary"
+                                                    className="bg-primary/10 text-primary hover:bg-primary/20">
+                                                    {skill}
+
+                                                </Badge>))}
+                                        </div>
+                                    </CardContent>
+
+                                </Card>
+                            ))}
+                        </div>
+                    </div>
+                    {/* the experience */}
+                    <div >
+                        <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
+                            experience
+                        </h2>
+                        <div lassName="space-y-6">
+                            {Experience.map((exp, index) => (
+                                <Card key={index}  className="bg-background border-border">
+                                    <CardContent className="p-6">
+                                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
+                                            <div>
+                                                <h3 className="text-xl font-semibold text-foreground flex items-center gap-2">
+                                                    <Briefcase  className="h-5 w-5 text-primary">{exp.title}</Briefcase>
+                                                </h3>
+                                                <p className="text-primary font-medium">{exp.company}</p>
+                                            </div>
+                                            <div className="flex items-center gap-2 text-muted-foreground mt-2 sm:mt-0">
+                                                <Calendar />
+                                                <span ame="text-sm">{exp.period}</span>
+                                            </div>
+
+                                        </div>
+                                        <p className="text-muted-foreground leading-relaxed">{exp.description}</p>
+                                    </CardContent>
+                                </Card>
+                            ))}
+                        </div>
+                    </div>
 
                 </div>
 
