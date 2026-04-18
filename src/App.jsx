@@ -6,6 +6,9 @@ import NotFound from './pages/NotFound'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import { Toaster } from '@/components/ui/sonner';
+import Projects from './pages/Project'
+
+import ProjectDetail from './pages/ProjectDetails'
 
 
 
@@ -17,8 +20,8 @@ const App = () => {
       {/* all the routes com here */}
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/projects' element={<h1>project</h1>}/>
-        <Route path='/project/:id' element={<h1>project details</h1>}/>
+        <Route path='/projects' element={<Projects/>}/>
+        <Route path='/project/:id' element={<ProjectDetail/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='*' element={<NotFound/>}/>
